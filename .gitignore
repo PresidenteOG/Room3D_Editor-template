@@ -1,0 +1,16 @@
+node_modules/
+dist/
+target/
+graphify-out/
+.vector-index/
+*.log
+.DS_Store
+Thumbs.db
+
+# Tauri build artifacts
+src-tauri/target/
+src-tauri/gen/
+
+# local env
+.env
+.env.local

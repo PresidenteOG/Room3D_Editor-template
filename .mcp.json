@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "tauri": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@hypothesi/tauri-mcp-server"
+      ],
+      "env": {}
+    },
+    "rust-analyzer": {
+      "type": "stdio",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "set PATH=%PATH%;C:/Users/danie/.cargo/bin && rust-analyzer-mcp-server"
+      ],
+      "env": {}
+    },
+    "21st": {
+      "type": "http",
+      "url": "https://21st.dev/api/mcp",
+      "headers": {
+        "x-api-key": "${TWENTYFIRST_API_KEY}"
+      }
+    }
+  }
+}
