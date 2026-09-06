@@ -3,6 +3,15 @@
 Built a cross-platform desktop room planner with 2D layout, live 3D preview and undo/redo, that
 saves and reloads a custom `.roomz` file, using Tauri 2, React and three.js.
 
+You open the app to an empty room you can resize by width, depth and height, drag furniture in
+from a catalog, move it around in the 2D plan while watching it update live in the 3D view, and
+undo or redo any of that. When you're happy with the layout, save writes it to a `.roomz` file on
+disk; opening that file later restores the exact same room.
+
+**Why Tauri over Electron**: Tauri ships a Rust shell instead of bundling a full Chromium and
+Node runtime per app, so the installer is a few megabytes instead of over a hundred — worth it for
+a desktop tool this size, where Electron's extra weight buys nothing the app actually needs.
+
 ## Structure
 
 | Folder | What it does |
