@@ -17,6 +17,12 @@ A desktop app for laying out rooms in 3D — place furniture from a catalog, pla
 *Real screenshot of the app actually running (`npm run dev`), viewed in a browser rather than the
 native Tauri window — same React/three.js UI either way.*
 
+### Architecture
+
+![Room3D_Editor architecture: 2D plan, 3D render and catalog feed a Zustand command/undo store, which persists to a .roomz file through the Tauri shell](./docs/architecture.png)
+
+Full breakdown in [ARCHITECTURE.md](./ARCHITECTURE.md).
+
 ## Stack
 
 Tauri 2 (Rust shell) + React + three.js.
