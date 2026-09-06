@@ -8,6 +8,8 @@ from a catalog, move it around in the 2D plan while watching it update live in t
 undo or redo any of that. When you're happy with the layout, save writes it to a `.roomz` file on
 disk; opening that file later restores the exact same room.
 
+![Room3D_Editor architecture: 2D plan, 3D render and catalog feed a Zustand command/undo store, which persists to a .roomz file through the Tauri shell](./docs/architecture.png)
+
 **Why Tauri over Electron**: Tauri ships a Rust shell instead of bundling a full Chromium and
 Node runtime per app, so the installer is a few megabytes instead of over a hundred — worth it for
 a desktop tool this size, where Electron's extra weight buys nothing the app actually needs.

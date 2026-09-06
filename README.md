@@ -10,7 +10,7 @@
 A desktop app for laying out rooms in 3D — place furniture from a catalog, plan in 2D, preview in
 3D, save and reload your layout.
 
-## Screenshot
+## Showcase
 
 ![Room3D_Editor's UI: 2D floor plan, room canvas and inspector panel, viewed in a browser](./docs/screenshot.png)
 
