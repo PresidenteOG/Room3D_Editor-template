@@ -36,4 +36,5 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full breakdown.
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+[PolyForm Noncommercial 1.0.0](./LICENSE). Free for personal and non-commercial use —
+not for shipping inside a product someone pays for.
