@@ -8,7 +8,7 @@ from a catalog, move it around in the 2D plan while watching it update live in t
 undo or redo any of that. When you're happy with the layout, save writes it to a `.roomz` file on
 disk; opening that file later restores the exact same room.
 
-![Room3D_Editor architecture: 2D plan, 3D render and catalog feed a Zustand command/undo store, which persists to a .roomz file through the Tauri shell](./docs/architecture.png)
+![Room3D_Editor architecture: 2D plan, 3D render and catalog feed a Zustand command/undo store holding a plain-data room document, with a geometry layer converting between plan, 3D and file coordinates, persisted to a .roomz file through the Tauri shell](./docs/architecture.png)
 
 **Why Tauri over Electron**: Tauri ships a Rust shell instead of bundling a full Chromium and
 Node runtime per app, so the installer is a few megabytes instead of over a hundred — worth it for
@@ -28,6 +28,13 @@ a desktop tool this size, where Electron's extra weight buys nothing the app act
   commands. |
 | `src/persist/` | Reads and writes the project's own `.roomz` file format
   (`roomzFormat`, `roomzIO`) and checks whether it's running inside Tauri or a plain browser. |
+| `src/doc/` | The room document itself — `RoomDoc` and its `types`, plus `validateDocument`.
+  Plain data, no three.js / React / Tauri imports. Everything on screen is derived from this
+  shape; the store holds one of these and the renderers never own state. |
+| `src/geometry/` | Pure math with no rendering: the doc-space ↔ three.js ↔ canvas2D
+  coordinate conversions (`coords`), furniture footprint and AABB overlap tests
+  (`placement`), and room-polygon helpers (`room`). `render3d` and `plan2d` both consume
+  these instead of each inventing their own. |
 | `src/ui/` | React components. |
 
 ## Language / framework breakdown
