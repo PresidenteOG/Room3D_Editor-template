@@ -33,7 +33,7 @@ npm run tauri dev
 
 ## Architecture
 
-![Room3D_Editor architecture: 2D plan, 3D render and catalog feed a Zustand command/undo store holding a plain-data room document, with a geometry layer converting between plan, 3D and file coordinates, persisted to a .roomz file through the Tauri shell](./docs/architecture.png)
+![Room Planner 3D architecture: 2D plan, 3D render and catalog feed a Zustand command/undo store holding a plain-data room document, with a geometry layer converting between plan, 3D and file coordinates, persisted to a .roomz file through the Tauri shell](./docs/architecture.png)
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full breakdown.
 
