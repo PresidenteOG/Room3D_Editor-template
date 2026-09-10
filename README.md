@@ -12,10 +12,13 @@ A desktop app for laying out rooms in 3D — place furniture from a catalog, pla
 
 ## Showcase
 
-![Room3D_Editor's UI: 2D floor plan, room canvas and inspector panel, viewed in a browser](./docs/screenshot.png)
+![Room Planner 3D running: the 2D floor plan on the left with a desk, wardrobe and bed, the three.js room in the middle, the inspector editing the selected bed](./docs/screenshots/overview.png)
 
-*Real screenshot of the app actually running (`npm run dev`), viewed in a browser rather than the
-native Tauri window — same React/three.js UI either way.*
+![The same room after rotating and widening the desk from the inspector — the change shows straight away in the 2D plan](./docs/screenshots/editing.png)
+
+Both captured from `npm run dev` in a browser rather than the native Tauri window — the
+React and three.js UI is the same either way. "New Room" drops in a starter bed, desk and
+wardrobe; the inspector edits position, rotation and scale, and every edit is undoable.
 
 ## Stack
 
