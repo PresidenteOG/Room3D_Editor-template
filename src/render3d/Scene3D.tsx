@@ -1,6 +1,6 @@
 import { useMemo, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { useDocumentStore } from "../store/documentStore";
 import { docToThree } from "../geometry/coords";
 import { roomCenter } from "../geometry/room";
@@ -28,9 +28,13 @@ export default function Scene3D() {
       camera={{ position: [target[0] + 500, 500, target[2] + 700], fov: 45, near: 1, far: 8000 }}
       onPointerMissed={() => select(null)}
     >
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[400, 600, 300]} intensity={0.9} castShadow />
-      <Environment preset="apartment" />
+      {/* All lighting is local. drei's <Environment preset> pulls an HDR from a
+          CDN, which broke the 3D view whenever the app ran offline (see
+          README "runs offline"); a hemisphere fill covers what it gave us. */}
+      <ambientLight intensity={0.6} />
+      <hemisphereLight args={["#ffffff", "#8d7f73", 0.7]} />
+      <directionalLight position={[400, 600, 300]} intensity={1.1} castShadow />
+      <directionalLight position={[-300, 200, -200]} intensity={0.3} />
       <Walls room={doc.room} />
       {doc.placements.map((p) => (
         <SelectableFurniture key={p.id} placement={p} orbitRef={orbitRef} />
