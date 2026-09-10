@@ -1,6 +1,6 @@
-![Room3D_Editor](./docs/banner.png)
+![Room Planner 3D banner](./docs/banner.png)
 
-# Room3D_Editor [TEMPLATE]
+# Room Planner 3D
 
 ![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
