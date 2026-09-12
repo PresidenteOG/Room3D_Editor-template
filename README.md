@@ -24,7 +24,11 @@ wardrobe; the inspector edits position, rotation and scale, and every edit is un
 
 Tauri 2 (Rust shell) + React + three.js.
 
-## Running it
+## Download
+
+Pre-built desktop packages are attached to the [releases](https://github.com/PresidenteOG/room-planner-3d/releases) page.
+
+## Running from source
 
 ```bash
 npm install
